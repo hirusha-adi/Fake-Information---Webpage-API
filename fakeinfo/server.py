@@ -18,14 +18,24 @@ app = Flask(__name__)
 # / ------------------------------
 @app.route("/", methods=["GET"])
 def index():
+    # The face
     face = requests.get("https://fakeface.rest/face/json").json()
     age = face["age"]
     face_url = face["image_url"]
+    gender = face["gender"]
 
+    # The fake profile
     fake = Faker()
     profile = fake.profile()
 
-    name = profile["name"]
+    # The name based on the gender of the image
+    if str(gender).lower() == "male":
+        first_name = fake.first_name_male()
+        last_name = fake.last_name_male()
+    else:
+        first_name = fake.first_name_female()
+        last_name = fake.last_name_female()
+
     job = profile["job"]
     birthdate = profile["birthdate"]
     company = profile["company"]
@@ -38,7 +48,8 @@ def index():
     mail = profile["mail"]
 
     return render_template("index.html",
-                           name=name,
+                           first_name=first_name,
+                           last_name=last_name,
                            job=job,
                            birthdate=birthdate,
                            company=company,
