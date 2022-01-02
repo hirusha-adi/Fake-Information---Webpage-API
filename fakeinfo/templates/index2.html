@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,7 @@
 
     <!-- Title of the webpage -->
     <title>
-        Password Strength Checker
+        Fake Information
     </title>
 
     <!-- Links to required Fonts, CSS and JS files -->
@@ -21,9 +20,9 @@
     <!-- CSS required for this webpage to function properly -->
     <style>
         .tracking-in-expand {
-            font-size: 300%;
+            font-size: 260%;
             text-align: center;
-            color: #FFFFFF;
+            color: #000;
             -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
             animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
         }
@@ -65,7 +64,6 @@
         }
 
         body {
-            /* background-image: url({{ url_for('static', filename='image.JPG') }}); */
             background-color: #191919;
             height: 100vh;
             background-size: cover;
@@ -74,7 +72,7 @@
         }
 
         pre {
-            color: #ECDBBA;
+            color: #EDEDED;
             text-align: center;
             overflow: auto;
             /* width: 600px; */
@@ -83,25 +81,25 @@
         }
 
         h5 {
-            color: #ECDBBA;
+            color: #EDEDED;
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
         }
 
         a:link {
-            color: #ECDBBA;
+            color: #EDEDED;
         }
 
         a:visited {
-            color: #ECDBBA;
+            color: #EDEDED;
         }
 
         a:hover {
-            color: #2D4263;
+            color: #444444;
         }
 
         a:active {
-            color: #ECDBBA;
+            color: #EDEDED;
         }
     </style>
 
@@ -112,32 +110,31 @@
     <div class="content col s12 center-align">
 
         <!-- Big title at the top of the page -->
-        <h1 class="tracking-in-expand" style="color: #ECDBBA;"><a href="https://github.com/hirusha-adi/Password-Check"
-                target="_blank" rel="noopener noreferrer">Password Strength Checker</a></h1>
-
-        <!-- Small title under the main title with the same animation -->
-        <h3 class="tracking-in-expand">An error has occured!</h3>
-
-        <br>
-
-        <!-- Display the error (The original Python3 Exception as it is) -->
-        <h5>- Error -</h5>
-        <pre style="text-align: left; color: #FFFFFF;">
-{{ pwderr }}
-        </pre>
+        <h1 class="tracking-in-expand" style="color: #EDEDED;">
+            <a href="https://github.com/hirusha-adi/Fake-Information-Webpage" target="_blank" rel="noopener noreferrer">
+                Fake Information
+            </a>
+        </h1>
 
     </div>
+
+
+    <!-- Displaying the fake information -->
+
+    <img src="{{ face_url }}" style="width: 400px; height: auto" alt="face_image" class="circle responsive-img">
+
+    <h1>{{ first_name }} {{ last_name }}</h1>
+
+
 
     <!-- Link to required JS -->
     <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
     <script>
-
         $(document).ready(
             function () {
                 M.AutoInit();
             }
         );
-
     </script>
 
 </body>

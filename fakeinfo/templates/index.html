@@ -1,141 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="font-size: 16px;">
 
 <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="portfolio">
+  <meta name="description" content="">
+  <meta name="page_type" content="np-template-header-footer-from-plugin">
+  <title>Fake information</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fakeinfo.css') }}" media="screen">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" media="screen">
+  <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"
+    defer=""></script>
+  <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/fakeinfo.js') }}"
+    defer=""></script>
+  <meta name="generator" content="Nicepage 4.2.22, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
-    <!-- Title of the webpage -->
-    <title>
-        Fake Information
-    </title>
 
-    <!-- Links to required Fonts, CSS and JS files -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+  <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/default-logo.png"
+}</script>
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="About">
+  <meta property="og:type" content="website">
+  <style>
+    body {
+      background-color: #171717;
+      color: #171717;
+    }
 
-    <!-- CSS required for this webpage to function properly -->
-    <style>
-        .tracking-in-expand {
-            font-size: 260%;
-            text-align: center;
-            color: #000;
-            -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-            animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-        }
+    .u-body {
+      color: rgb(221, 218, 214);
+      background-color: rgb(24, 26, 27);
+      --effect-scale: 1.1;
+    }
 
-        @-webkit-keyframes tracking-in-expand {
-            0% {
-                letter-spacing: -0.5em;
-                opacity: 0;
-            }
-
-            40% {
-                opacity: 0.6;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes tracking-in-expand {
-            0% {
-                letter-spacing: -0.5em;
-                opacity: 0;
-            }
-
-            40% {
-                opacity: 0.6;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .content {
-            max-width: 700px;
-            margin: auto;
-            padding-top: 1.9%;
-        }
-
-        body {
-            background-color: #191919;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            /* display: flex; */
-        }
-
-        pre {
-            color: #EDEDED;
-            text-align: center;
-            overflow: auto;
-            /* width: 600px; */
-            /* max-width: 750px; */
-            margin: auto;
-        }
-
-        h5 {
-            color: #EDEDED;
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        a:link {
-            color: #EDEDED;
-        }
-
-        a:visited {
-            color: #EDEDED;
-        }
-
-        a:hover {
-            color: #444444;
-        }
-
-        a:active {
-            color: #EDEDED;
-        }
-    </style>
-
+    .content {
+      margin: auto;
+    }
+  </style>
 </head>
 
-<body>
-
-    <div class="content col s12 center-align">
-
-        <!-- Big title at the top of the page -->
-        <h1 class="tracking-in-expand" style="color: #EDEDED;">
-            <a href="https://github.com/hirusha-adi/Fake-Information-Webpage" target="_blank" rel="noopener noreferrer">
-                Fake Information
-            </a>
-        </h1>
-
+<body class="u-body content">
+  <section class="u-align-left u-clearfix u-grey-90 u-section-1" id="carousel_1c3e">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div style="min-height: 836px; background-image: url('{{ face_url }}');"
+              class="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30">
+            </div>
+            <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2">
+                <p style="color: #EDEDED" class="u-align-center u-text u-text-2">
+                  <b>Job:</b> {{ job}}
+                  <br>
+                  <b>Birthdate:</b> {{birthdate }}
+                  <br>
+                  <b>Company:</b> {{company }}
+                  <br>
+                  <b>SSN:</b> {{ ssn }}
+                  <br>
+                  <b>Residence:</b> {{ residence }}
+                  <br>
+                  <b>Current Location:</b> {{current_location }}
+                  <br>
+                  <b>Blood Group:</b> {{ blood_group }}
+                  <br>
+                  <b>Username:</b> {{ username }}
+                  <br>
+                  <b>Address:</b> {{ address }}
+                  <br>
+                  <b>Mail:</b> {{ mail }}
+                  <br>
+                  <b>Age:</b> {{ age }}
+                  <br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <h1 sytle="align-content: center;" class="u-text-body-alt-color">{{ first_name }} {{ last_name }}
+          </h1>
+        </div>
+      </div>
     </div>
-
-
-    <!-- Displaying the fake information -->
-
-    <img src="{{ face_url }}" style="width: 400px; height: auto" alt="face_image" class="circle responsive-img">
-
-    <h1>{{ first_name }} {{ last_name }}</h1>
-
-
-
-    <!-- Link to required JS -->
-    <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
-    <script>
-        $(document).ready(
-            function () {
-                M.AutoInit();
-            }
-        );
-    </script>
+    </div>
+  </section>
 
 </body>
 
