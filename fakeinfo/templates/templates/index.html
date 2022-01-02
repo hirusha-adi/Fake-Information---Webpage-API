@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the webpage -->
+    <title>
+        Password Strength Checker
+    </title>
+
+    <!-- Links to required Fonts, CSS and JS files -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+
+    <!-- CSS required for this webpage to function properly -->
+    <style>
+        .tracking-in-expand {
+            font-size: 260%;
+            text-align: center;
+            color: #000;
+            -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+        }
+
+        @-webkit-keyframes tracking-in-expand {
+            0% {
+                letter-spacing: -0.5em;
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes tracking-in-expand {
+            0% {
+                letter-spacing: -0.5em;
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.6;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .content {
+            max-width: 700px;
+            margin: auto;
+            padding-top: 1.9%;
+        }
+
+        body {
+            background-color: #191919;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            /* display: flex; */
+        }
+
+        pre {
+            color: #ECDBBA;
+            text-align: center;
+            overflow: auto;
+            /* width: 600px; */
+            /* max-width: 750px; */
+            margin: auto;
+        }
+
+        h5 {
+            color: #ECDBBA;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        a:link {
+            color: #ECDBBA;
+        }
+
+        a:visited {
+            color: #ECDBBA;
+        }
+
+        a:hover {
+            color: #2D4263;
+        }
+
+        a:active {
+            color: #ECDBBA;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="content col s12 center-align">
+
+        <!-- Big title at the top of the page -->
+        <h1 class="tracking-in-expand" style="color: #ECDBBA;"><a href="https://github.com/hirusha-adi/Password-Check"
+                target="_blank" rel="noopener noreferrer">Password Strength Checker</a></h1>
+
+        <br>
+        <br>
+
+        <!-- Form in which the password will be POSTed to the server -->
+        <form action="" method="post">
+
+            <!-- Input Field (Row 1) -->
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <i class="material-icons prefix" style="color: #ECDBBA;">vpn_key</i>
+                    <input type="text" name="password" class="validate" id="password" style="color: #ECDBBA;">
+                    <label for="password">
+                        Enter your Password here
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit Button (Row 2) -->
+            <div class="row text-center">
+                <div class="input-field col s12 d-flex justify-content-center center">
+                    <button type="submit" value="Download"
+                        class="btn waves-effect waves-light btn-large accent-2 offset-s2 mx-auto"
+                        style="background-color: #C84B31;">
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+        </form>
+        <!-- End of the Form -->
+
+    </div>
+
+    <!-- Displaying the results -->
+    <!-- I dont think the end user wants to see this -->
+    <!-- Make sure to Uncomment when developing this program to find perfomance issues -->
+    <!-- <br>
+<h5>- Calculation Time -</h5>
+<pre>
+{{ calc_time }}
+</pre> -->
+    <br>
+    <h5>- Password -</h5>
+    <pre>
+{{ password }}
+</pre>
+    <br>
+    <h5>- Score -</h5>
+    <pre>
+{{ score }}
+</pre>
+    <br>
+    <h5>- Guesses -</h5>
+    <pre>
+{{ guesses }}
+</pre>
+    <br>
+    <h5>- Crack Time -</h5>
+    <pre>
+{{ crack_time }}
+</pre>
+    {% if not(leaked == "-") %}
+    <br>
+    <h5>- Leaked -</h5>
+    <pre>
+{{ leaked }}
+</pre>
+    {% endif %}
+    {% if not(warning == "-") %}
+    <br>
+    <h5>- Warning -</h5>
+    <pre>
+{{ warning }}
+</pre>
+    {% endif %}
+    {% if not(suggestions == "-") %}
+    <br>
+    <h5>- Suggestions -</h5>
+    <pre>
+{{ suggestions }}
+</pre>
+    {% endif %}
+    <br>
+    <h5>- Sequence Info -</h5>
+    <pre>
+{{ sequence_info }}
+</pre>
+
+    <br>
+    <br>
+
+    <!-- Link to required JS -->
+    <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+    <script>
+
+        $(document).ready(
+            function () {
+                M.AutoInit();
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
