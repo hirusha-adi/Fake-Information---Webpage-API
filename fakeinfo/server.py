@@ -22,6 +22,37 @@ def index():
     age = face["age"]
     face_url = face["image_url"]
 
+    fake = Faker()
+    profile = fake.profile()
+
+    name = profile["name"]
+    job = profile["job"]
+    birthdate = profile["birthdate"]
+    company = profile["company"]
+    ssn = profile["ssn"]
+    residence = profile["residence"]
+    current_location = profile["current_location"]
+    blood_group = profile["blood_group"]
+    username = profile["username"]
+    address = profile["address"]
+    mail = profile["mail"]
+
+    return render_template("index.html",
+                           name=name,
+                           job=job,
+                           birthdate=birthdate,
+                           company=company,
+                           ssn=ssn,
+                           residence=residence,
+                           current_location=current_location,
+                           blood_group=blood_group,
+                           username=username,
+                           address=address,
+                           mail=mail,
+                           age=age,
+                           face_url=face_url
+                           )
+
 
 # Errors ------------------------------
 @app.errorhandler(404)
