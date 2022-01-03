@@ -2,15 +2,35 @@
 <html class="no-js">
 
 <head>
-    <title>Generate a Random Name - Fake Name Generator</title>
+    <title>Fake Information Generator</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/min-3.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/customStyles.css') }}">
 
-    <!-- Meta Tags -->
+
+    <!-- Meta tags generated from: https://metatags.io/ -->
+    <!-- Primary Meta Tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="Get a whole new identity at the Fake Name Generator">
+    <meta name="description"
+        content="Generate completely random and fake information + a photo of the fake profile. No Ads, No Sign-up, No Tracking">
+    <meta name="keywords"
+        content="name generator, fake, generator, identity, credit card, social security number, random" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Get a whole new identity at the Fake Name Generator">
+    <meta property="og:description"
+        content="Generate completely random and fake information + a photo of the fake profile. No Ads, No Sign-up, No Tracking">
+    <meta property="og:image" content="{{ url_for('static', filename='images/Fake-Name-Generator.jpg') }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Get a whole new identity at the Fake Name Generator">
+    <meta property="twitter:description"
+        content="Generate completely random and fake information + a photo of the fake profile. No Ads, No Sign-up, No Tracking">
+    <meta property="twitter:image" content="{{ url_for('static', filename='images/Fake-Name-Generator.jpg') }}">
 
 </head>
 
@@ -32,13 +52,13 @@
                             </div>
                             <div class="content">
 
-                                <!-- <div class="bcs">
+                                <div class="bcs">
                                     <div class="content">
                                         <div>
                                             <img src="{{ face_url }}" width="121" height="auto" alt="Female" />
-                            </div>
-                        </div>
-                    </div> -->
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="info">
                                     <div class="content">
@@ -80,12 +100,13 @@
                                                 </dd>
                                             </dl>
 
-                                            <!-- Geo Cordinates -->
+                                            <!-- Current Location -->
                                             <dl class="dl-horizontal">
-                                                <dt>Geo coordinates</dt>
+                                                <dt>Current Location</dt>
                                                 <dd>
-                                                    <a id="geo" href="">
-                                                        {{ current_location2 }}
+                                                    <a id="geo"
+                                                        href="http://maps.google.com/maps?q={{ current_location1 }},{{ current_location2 }}">
+                                                        {{ current_location1 }}, {{ current_location2 }}
                                                     </a>
                                                 </dd>
                                             </dl>
@@ -232,28 +253,35 @@
                                             <!-- Main Category - Physical Characteristics -->
                                             <h3 class="hh3">Physical Characteristics</h3>
 
+                                            <!-- Height -->
                                             <dl class="dl-horizontal">
                                                 <dt>Height</dt>
-                                                <dd>{{ height }} centimeters</dd>
+                                                <dd>{{ height }} centimeters ({{ height_inch }} inches) ({{ height_feet
+                                                    }} feet)</dd>
                                             </dl>
 
+                                            <!-- Weight -->
                                             <dl class="dl-horizontal">
                                                 <dt>Weight</dt>
-                                                <dd>{{ weight }} kilograms</dd>
+                                                <dd>{{ weight }} kilograms ({{ weight_lbs }} pounds)</dd>
                                             </dl>
 
+                                            <!-- Blood Type -->
                                             <dl class="dl-horizontal">
                                                 <dt>Blood type</dt>
                                                 <dd>{{ blood_group }}</dd>
                                             </dl>
 
+                                            <!-- Main Category - Other -->
                                             <h3 class="hh3">Other</h3>
 
+                                            <!-- Favorite Color  -->
                                             <dl class="dl-horizontal">
                                                 <dt>Favorite color</dt>
                                                 <dd>{{ color }}</dd>
                                             </dl>
 
+                                            <!-- Vehicle -->
                                             <dl class="dl-horizontal">
                                                 <dt>Vehicle</dt>
                                                 <dd>{{ vehicle }}</dd>
@@ -277,17 +305,6 @@
             </div>
         </div>
     </div>
-    <script src="/js/LAB.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var $navToggle = $('.navbar-toggle');
-            $navigation = $('.navigation');
-
-            $navToggle.click(function () {
-                $navigation.toggleClass('navDisplay');
-            })
-        })
-    </script>
 
 </body>
 
