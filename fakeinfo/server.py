@@ -228,18 +228,18 @@ def api():
     fake.add_provider(VehicleProvider)
     final_reurn_val["vehicle"] = fake.vehicle_year_make_model_cat()
 
-    # Others
-    final_reurn_val[
-        "name_meaning_link"] = f"https://www.babysfirstdomain.com/meaning/{final_reurn_val['name_info_gender']}/{final_reurn_val['first_name']}"
-    final_reurn_val[
-        "current_location_google_maps_link"] = f"http://maps.google.com/maps?q={final_reurn_val['current_location1']},{final_reurn_val['current_location2']}"
-
     # Location
     # http://alvarestech.com/temp/routeconverter/RouteConverter/navigation-formats/src/main/doc/googlemaps/Google_Map_Parameters.htm
     # https://stackoverflow.com/questions/5807063/url-to-a-google-maps-page-to-show-a-pin-given-a-latitude-longitude
     current_location = profile["current_location"]
     final_reurn_val["current_location1"] = str(current_location[0])
     final_reurn_val["current_location2"] = str(current_location[1])
+
+    # Others
+    final_reurn_val[
+        "name_meaning_link"] = f"https://www.babysfirstdomain.com/meaning/{final_reurn_val['name_info_gender']}/{final_reurn_val['first_name']}"
+    final_reurn_val[
+        "current_location_google_maps_link"] = f"http://maps.google.com/maps?q={final_reurn_val['current_location1']},{final_reurn_val['current_location2']}"
 
     return final_reurn_val
 
