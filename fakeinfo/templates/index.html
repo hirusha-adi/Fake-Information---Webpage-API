@@ -91,11 +91,11 @@
                                                 <dt>SSN</dt>
                                                 <dd>{{ ssn }}
                                                     <div class="adtl">
-                                                        You should
+                                                        ( You should
                                                         <a href="https://www.ssnregistry.org/">
                                                             click here
                                                         </a>
-                                                        to find out if your SSN is online.
+                                                        to find out if your SSN is online. )
                                                     </div>
                                                 </dd>
                                             </dl>
@@ -107,8 +107,21 @@
                                                     <a id="geo"
                                                         href="http://maps.google.com/maps?q={{ current_location1 }},{{ current_location2 }}">
                                                         {{ current_location1 }}, {{ current_location2 }}
+
+                                                        <div class="adtl">
+                                                            <a
+                                                                href="http://maps.google.com/maps?q={{ current_location1 }},{{ current_location2 }}">
+                                                                ( Click here to open in Google Maps )
+                                                            </a>
+                                                        </div>
                                                     </a>
                                                 </dd>
+                                            </dl>
+
+                                            <!-- Residence -->
+                                            <dl class="dl-horizontal">
+                                                <dt>Residence</dt>
+                                                <dd>{{ residence }}</dd>
                                             </dl>
 
                                             <!-- Main Category - Phone -->
@@ -231,8 +244,8 @@
 
                                             <!-- CVC -->
                                             <dl class="dl-horizontal">
-                                                <dt>CVC</dt>
-                                                <dd>{{ cc_cvc }}</dd>
+                                                <dt>CVV</dt>
+                                                <dd>{{ cc_cvv }}</dd>
                                             </dl>
 
                                             <!-- Main Category - Employment -->
