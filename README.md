@@ -28,4 +28,3 @@ python3 fake.py
 # Resources
 
 1. UI borrowed from: [fakenamegenerator](https://www.fakenamegenerator.com/)
-2. Color theme choosen: [Color Hunt](https://colorhunt.co/palette/171717444444da0037ededed)
