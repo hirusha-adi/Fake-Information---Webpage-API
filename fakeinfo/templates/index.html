@@ -4,8 +4,8 @@
 <head>
     <title>Generate a Random Name - Fake Name Generator</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/min-3.css">
-    <link rel="stylesheet" type="text/css" href="/css/customStyles.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/min-3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/customStyles.css') }}">
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
 
                 <div id="body">
                     <div class="content">
-                        <h2>Your Randomly Generated Identity</h2>
+                        <h2>Fake Information</h2>
 
                         <div id="details">
                             <div class="bcsw ctr">
@@ -32,192 +32,231 @@
                             </div>
                             <div class="content">
 
-                                <div class="bcs">
+                                <!-- <div class="bcs">
                                     <div class="content">
                                         <div>
-                                            <img src="/images/image.jpg" width="121" height="auto" alt="Female" />
-                                            <!-- <img src="/images/image.jpg" style="width: 121; height: 137;" alt="Image" /> -->
-                                        </div>
-                                    </div>
-                                </div>
+                                            <img src="{{ face_url }}" width="121" height="auto" alt="Female" />
+                            </div>
+                        </div>
+                    </div> -->
 
                                 <div class="info">
                                     <div class="content">
+
+                                        <!-- Address -->
                                         <div class="address">
-                                            <h3>Milagros J. Davis</h3>
+                                            <h3>{{ first_name }} {{ last_name }}</h3>
                                             <div class="adr">
-                                                2572 Overlook Drive<br />Richmond, IN 47374 </div>
+                                                {{ address }} </div>
                                         </div>
 
-                                        <p>Curious what <strong>Milagros</strong> means? <a
-                                                href="https://www.babysfirstdomain.com/meaning/girl/milagros">Click here
-                                                to find out!</a></p>
+                                        <p>
+                                            Curious what <strong>{{ first_name }}</strong> means?
+                                            <a
+                                                href="https://www.babysfirstdomain.com/meaning/{{ name_info_gender }}/{{ first_name }}">
+                                                Click here to find out!
+                                            </a>
+                                        </p>
+
                                         <div class="extra">
 
+                                            <!-- Mothers Maiden Name -->
                                             <dl class="dl-horizontal">
                                                 <dt>Mother's maiden name</dt>
-                                                <dd>Davis</dd>
+                                                <dd>{{ mothers_maiden_name }}</dd>
                                             </dl>
 
+                                            <!-- SSN -->
                                             <dl class="dl-horizontal">
                                                 <dt>SSN</dt>
-                                                <dd>303-40-XXXX <div class="adtl">You should <a
-                                                            href="https://www.ssnregistry.org/">click here</a> to find
-                                                        out if your SSN is online.</div>
+                                                <dd>{{ ssn }}
+                                                    <div class="adtl">
+                                                        You should
+                                                        <a href="https://www.ssnregistry.org/">
+                                                            click here
+                                                        </a>
+                                                        to find out if your SSN is online.
+                                                    </div>
                                                 </dd>
                                             </dl>
+
+                                            <!-- Geo Cordinates -->
                                             <dl class="dl-horizontal">
                                                 <dt>Geo coordinates</dt>
-                                                <dd><a id="geo" href="javascript:void(0)">39.778195, -84.901537</a></dd>
+                                                <dd>
+                                                    <a id="geo" href="">
+                                                        {{ current_location2 }}
+                                                    </a>
+                                                </dd>
                                             </dl>
 
+                                            <!-- Main Category - Phone -->
                                             <h3 class="hh3">Phone</h3>
 
+                                            <!-- Phone -->
                                             <dl class="dl-horizontal">
                                                 <dt>Phone</dt>
-                                                <dd>765-304-1368</dd>
+                                                <dd>
+                                                    {{ phone_number }}
+                                                </dd>
                                             </dl>
 
+                                            <!-- Country Code -->
                                             <dl class="dl-horizontal">
                                                 <dt>Country code</dt>
                                                 <dd>1</dd>
                                             </dl>
 
+                                            <!-- Main Category - Birthday -->
                                             <h3 class="hh3">Birthday</h3>
 
+                                            <!-- Birthday -->
                                             <dl class="dl-horizontal">
                                                 <dt>Birthday</dt>
-                                                <dd>July 6, 1996</dd>
+                                                <dd>
+                                                    {{ birthdate }}
+                                                </dd>
                                             </dl>
 
+                                            <!-- Age -->
                                             <dl class="dl-horizontal">
                                                 <dt>Age</dt>
-                                                <dd>25 years old</dd>
+                                                <dd>
+                                                    {{ age }} years old
+                                                </dd>
                                             </dl>
 
+                                            <!-- Tropical Zodiac -->
                                             <dl class="dl-horizontal">
-                                                <dt>Tropical zodiac</dt>
-                                                <dd>Cancer</dd>
+                                                <dt>Tropical Zodiac</dt>
+                                                <dd>
+                                                    {{ tropical_zodiac }}
+                                                </dd>
                                             </dl>
 
+                                            <!-- Main Category - Online -->
                                             <h3 class="hh3">Online</h3>
 
+                                            <!-- Email Address (Working temp-mail) -->
                                             <dl class="dl-horizontal">
-                                                <dt>Email Address</dt>
+                                                <dt>Email Address(Working)</dt>
 
-                                                <dd>MilagrosJDavis@rhyta.com <div class="adtl">This is a real email
+                                                <dd>{{ username }}@rhyta.com <div class="adtl">This is a real email
                                                         address. <a
-                                                            href="http://www.fakemailgenerator.com/#/rhyta.com/milagrosjdavis/"
+                                                            href="http://www.fakemailgenerator.com/#/rhyta.com/{{ username }}/"
                                                             title="Fake Mail Generator">Click here to activate it!</a>
                                                     </div>
                                                 </dd>
                                             </dl>
 
+                                            <!-- Company Email (Does not work! NOT A TEMP MAIL) -->
+                                            <dl class="dl-horizontal">
+                                                <dt>Company Email</dt>
+                                                <dd>
+                                                    {{ company_email }}
+                                                </dd>
+                                            </dl>
+
+                                            <!-- Username -->
                                             <dl class="dl-horizontal">
                                                 <dt>Username</dt>
-                                                <dd>Andesell</dd>
+                                                <dd>
+                                                    {{ username }}
+                                                </dd>
                                             </dl>
 
+                                            <!-- Password -->
                                             <dl class="dl-horizontal">
                                                 <dt>Password</dt>
-                                                <dd>xae6tohTh</dd>
+                                                <dd>
+                                                    {{ password }}
+                                                </dd>
                                             </dl>
 
+                                            <!-- Website -->
                                             <dl class="dl-horizontal">
                                                 <dt>Website</dt>
                                                 <dd>eprothmalo.com</dd>
                                             </dl>
 
+                                            <!-- Browser User Agent -->
                                             <dl class="dl-horizontal">
                                                 <dt>Browser user agent</dt>
-                                                <dd>Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101
-                                                    Firefox/66.0</dd>
+                                                <dd>
+                                                    {{ user_agent }}
+                                                </dd>
                                             </dl>
 
+                                            <!-- Main Category - Finance -->
                                             <h3 class="hh3">Finance</h3>
 
+                                            <!-- Card Provider -->
                                             <dl class="dl-horizontal">
-                                                <dt>MasterCard</dt>
-                                                <dd>5315 9519 2349 5017</dd>
+                                                <dt>Card Provider</dt>
+                                                <dd>{{ cc_provider }}</dd>
                                             </dl>
 
+                                            <!-- Card Number -->
                                             <dl class="dl-horizontal">
-                                                <dt>Expires</dt>
-                                                <dd>12/2026</dd>
+                                                <dt>Card Number</dt>
+                                                <dd>{{ cc_number }}</dd>
                                             </dl>
 
+                                            <!-- Car Expiry -->
                                             <dl class="dl-horizontal">
-                                                <dt>CVC2</dt>
-                                                <dd>045</dd>
+                                                <dt>Card Expiry</dt>
+                                                <dd>{{ cc_expiry }}</dd>
                                             </dl>
 
+                                            <!-- CVC -->
+                                            <dl class="dl-horizontal">
+                                                <dt>CVC</dt>
+                                                <dd>{{ cc_cvc }}</dd>
+                                            </dl>
+
+                                            <!-- Main Category - Employment -->
                                             <h3 class="hh3">Employment</h3>
 
+                                            <!-- Company -->
                                             <dl class="dl-horizontal">
                                                 <dt>Company</dt>
-                                                <dd>Fellowship Investments</dd>
+                                                <dd>{{ company }}</dd>
                                             </dl>
 
+                                            <!-- Occupation -->
                                             <dl class="dl-horizontal">
                                                 <dt>Occupation</dt>
-                                                <dd>Shuttle car operator</dd>
+                                                <dd>{{ job }}</dd>
                                             </dl>
 
-                                            <h3 class="hh3">Physical characteristics</h3>
+                                            <!-- Main Category - Physical Characteristics -->
+                                            <h3 class="hh3">Physical Characteristics</h3>
 
                                             <dl class="dl-horizontal">
                                                 <dt>Height</dt>
-                                                <dd>5' 3" (161 centimeters)</dd>
+                                                <dd>{{ height }} centimeters</dd>
                                             </dl>
 
                                             <dl class="dl-horizontal">
                                                 <dt>Weight</dt>
-                                                <dd>182.2 pounds (82.8 kilograms)</dd>
+                                                <dd>{{ weight }} kilograms</dd>
                                             </dl>
 
                                             <dl class="dl-horizontal">
                                                 <dt>Blood type</dt>
-                                                <dd>AB+</dd>
-                                            </dl>
-
-                                            <h3 class="hh3">Tracking numbers</h3>
-
-                                            <dl class="dl-horizontal">
-                                                <dt>UPS tracking number</dt>
-                                                <dd>1Z 582 308 56 1085 004 9</dd>
-                                            </dl>
-
-                                            <dl class="dl-horizontal">
-                                                <dt>Western Union MTCN</dt>
-                                                <dd>1347294489</dd>
-                                            </dl>
-
-                                            <dl class="dl-horizontal">
-                                                <dt>MoneyGram MTCN</dt>
-                                                <dd>42179744</dd>
+                                                <dd>{{ blood_group }}</dd>
                                             </dl>
 
                                             <h3 class="hh3">Other</h3>
 
                                             <dl class="dl-horizontal">
                                                 <dt>Favorite color</dt>
-                                                <dd>Black</dd>
+                                                <dd>{{ color }}</dd>
                                             </dl>
 
                                             <dl class="dl-horizontal">
                                                 <dt>Vehicle</dt>
-                                                <dd>2003 Mercury Grand Marquis</dd>
-                                            </dl>
-
-                                            <dl class="dl-horizontal">
-                                                <dt>GUID</dt>
-                                                <dd>95d9e7fc-a9ba-4926-bbd8-3b7627b310bb</dd>
-                                            </dl>
-
-                                            <dl class="dl-horizontal">
-                                                <dt>QR Code</dt>
-                                                <dd><a id="qr" href="javascript:void(0)">Click to view the QR code for
-                                                        this identity</a></dd>
+                                                <dd>{{ vehicle }}</dd>
                                             </dl>
 
                                         </div>
