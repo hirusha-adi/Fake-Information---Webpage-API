@@ -1,3 +1,3 @@
-from fakeinfo import server
+from fakeinfo.server import app
 
-server.app.run("0.0.0.0", port=3331, debug=True)
+app.run("0.0.0.0", port=3331)
