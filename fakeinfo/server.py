@@ -102,11 +102,17 @@ def index():
     # http://alvarestech.com/temp/routeconverter/RouteConverter/navigation-formats/src/main/doc/googlemaps/Google_Map_Parameters.htm
     # https://stackoverflow.com/questions/5807063/url-to-a-google-maps-page-to-show-a-pin-given-a-latitude-longitude
     current_location1 = str(current_location[0])
-    current_location2 = str(current_location[1]).split("'")
+    current_location2 = str(current_location[1])
+
+    height_inch = str(int(height)/2.54)[:4]
+    height_feet = str(int(height)/30.48)[:4]
+
+    weight_lbs = str(int(weight)*2.205)[:5]
 
     return render_template("index.html",
                            first_name=first_name,
                            last_name=last_name,
+                           name_info_gender=name_info_gender,
                            job=job,
                            birthdate=proper_age,
                            company=company,
@@ -132,9 +138,11 @@ def index():
                            color=color,
                            company_email=company_email,
                            height=height,
+                           height_inch=height_inch,
+                           height_feet=height_feet,
                            weight=weight,
                            vehicle=vehicle,
-                           name_info_gender=name_info_gender
+                           weight_lbs=weight_lbs
                            )
 
 
